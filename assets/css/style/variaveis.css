@@ -1,0 +1,44 @@
+:root {
+    --font-principal: "Lato", sans-serif;
+    --cor-de-fundo: #202024;
+    --cor-de-fonte: white;
+    --tamanho-titulo: 2em;
+    --border-color: #30363db3;
+}
+
+.azul-claro {
+    color: #2f81f7;
+    /*61dafb */
+  }
+
+.azul {
+    color: #1f6feb;
+  }
+
+.laranja {
+    color: coral;
+  }
+
+.vermelho {
+    color: lightcoral;
+  }
+
+.cinza {
+    color: slategray;
+  }
+
+.amarelo {
+    color: yellow;
+  }
+
+.roxo {
+    color: #8257e6;
+  }
+
+.verde{
+    color: springgreen;
+  }
+
+.aqua {
+    color: aqua;
+  }

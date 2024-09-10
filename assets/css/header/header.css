@@ -1,0 +1,41 @@
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    padding: 7px;
+}
+
+.titulo {
+    color: lightcoral;
+    font-size: 1.5em;
+}
+
+.procurar {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    border-style: none;
+    box-sizing: border-box;
+    color: royalblue;
+    height: 15px;
+    padding: 10px;
+}
+
+.procurar:hover {
+    border: 1px  solid  royalblue;
+    box-sizing: border-box;
+}
+
+.procurar::-webkit-input-placeholder {
+   color:royalblue;
+}
+
+.procurar:focus {
+    outline: none;
+}
+
+.incorreto {
+    border: 1px  solid  red;
+}
+
+.procurar-webkit-input-placeholder {
+    color: red;
+}

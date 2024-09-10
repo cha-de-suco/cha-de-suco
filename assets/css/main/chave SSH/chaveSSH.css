@@ -1,0 +1,44 @@
+.chaveSSH {
+    height: 200vh;
+    padding: 20px;
+    width: 650px;
+}
+
+h1 {
+    text-align: center;
+}
+
+pre {
+    background-color: #0d1117;
+    border-radius: 12px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+.copiar_bt {
+    align-self: flex-end;
+    background: url("../../../img/copy_4983709.png") center / cover;
+    background-color: white;
+    border-radius: 35px;
+    border-style: none;
+    height: 26px;
+    margin-right: 50px;
+    margin-bottom: 10px;
+    transition: background-color 0.4s ease-in-out;
+    width: 26px;
+}
+
+.copiar_bt:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.4s ease-in-out;
+}
+
+.copiar_bt:focus {
+    background-color: springgreen;
+    transition: background-color 0.4s ease-in-out;
+}

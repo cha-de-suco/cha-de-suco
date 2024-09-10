@@ -1,0 +1,13 @@
+html{
+    scroll-behavior: "smooth";
+    overflow-x: hidden;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: var(--cor-de-fundo);
+    color: var(--cor-de-fonte);
+    font-family: var(--font-principal);
+    margin: 0;
+    padding: 0;
+}

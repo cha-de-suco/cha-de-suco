@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/img/git-log.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style/variaveis.css">
+    <link rel="stylesheet" href="./assets/css/style/style.css">
+    <link rel="stylesheet" href="./assets/css/header/header.css">
+    <link rel="stylesheet" href="./assets/css/main/main.css">
+    <link rel="stylesheet" href="./assets/css/main/introducao/introducao.css">
+    <link rel="stylesheet" href="./assets/css/main/chave SSH/chaveSSH.css">
+    <link rel="stylesheet" href="./assets/css/main/gerandoChave/gerandoChave.css">
+    <link rel="stylesheet" href="./assets/css/main/adicionarChave/adicionar_chave.css">
+    <script src="./assets/javascript/index.js" defer></script>
+    <title>Manual do Git</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <span class="titulo">Manual do Git</span>
+        <input type="text" class="procurar" id="input" placeholder="Oque deseja?">
+    </header>
+
+    <main class="main">
+        <section class="introducao">
+            <div class="introducao_div">
+                <div class="github_img"></div>
+                <p class="paragrafo_introducao">Aqui vai estar a resolução de todos os problemas que enfrentei no git e github. Caso queira procurar por um determinado assunto ou problema, basta ir no input de pesquisa no canto superior direito digitar e depois pressionar enter.</p>
+            </div>
+        </section>
+
+        <section id="chaveSSH" class="chaveSSH">
+            <div class="gerar">
+                <h1>Chave SSH</h1>
+                    <p>Para gerar uma chave SSH voce primeiro deve verificar se já existe uma chave SSH usando o terminal do Git-Bash, que por sinal, é instalado junto com o Git, a verificação deve ser feita usando esse comando:</p>
+
+                    <pre>
+                        <code>
+        <span class="azul">$</span> <span class="roxo">ls</span> <span class="cinza">-al</span> ~/.ssh
+
+                        </code>
+    <button class="copiar_bt" onclick= "copiarCodigo(texto1)" type="button"></button>
+                    </pre>
+                    <br>
+                    <p>Após ele abrir uma lista de arquivos no terminal, você deve verificar se há na lista três arquivos nescessários para gerar a chave:</p>
+
+                    <pre>
+                        <code>
+        <span class="azul">drwxr-xr-x 1</span> <span class="roxo">home</span> <span class="verde">197121</span>    0 Aug 17 11:44 <span class="azul-claro">./</span>
+        <span class="azul">drwxr-xr-x 1</span> <span class="roxo">home</span> <span class="verde">197121</span>    0 Aug 27 21:00 <span class="azul-claro">../</span>
+        <span class="azul">-rw-r--r-- 1</span> <span class="roxo">home</span> <span class="verde">197121</span>  748 Aug 17 10:56 id_ecdsa
+        <span class="azul">-rw-r--r-- 1</span> <span class="roxo">home</span> <span class="verde">197121</span>  <span class="laranja">274 Aug 17 10:56 id_ecdsa.pub</span>
+        <span class="azul">-rw-r--r-- 1</span> <span class="roxo">home</span> <span class="verde">197121</span>  419 Aug 17 11:08 id_ed25519
+        <span class="azul">-rw-r--r-- 1</span> <span class="roxo">home</span> <span class="verde">197121</span>  <span class="laranja">104 Aug 17 11:08 id_ed25519.pub</span>
+        <span class="azul">-rw-r--r-- 1</span> <span class="roxo">home</span> <span class="verde">197121</span> 3389 Aug 17 10:55 id_rsa
+        <span class="azul">-rw-r--r-- 1</span> <span class="roxo">home</span> <span class="verde">197121</span>  <span class="laranja">746 Aug 17 10:55 id_rsa.pub</span>
+        <span class="azul">-rw-r--r-- 1</span> <span class="roxo">home</span> <span class="verde">197121</span>  828 Aug 17 11:44 known_hosts
+        <span class="azul">-rw-r--r-- 1</span> <span class="roxo">home</span> <span class="verde">197121</span>   92 Apr  1 15:37 known_hosts.old
+
+                        </code>
+                    </pre>
+    
+                    <p>Caso seu computador não tenha essas chaves, você poderá adiciona-las usando comandos no Git-Bash.</p>
+                    <br>
+                    <p>Primeiro vamos gerar a primeira chave da lista que no caso é a chave ecdsa:</p>
+
+                    <pre>
+                        <code>
+        <span class="azul">$</span> <span class="roxo">ssh-keygen</span> <span class="cinza">-t</span> <span class="vermelho">ecdsa</span> <span class="cinza">-b</span> </span> <span class="verde">521</span> <span class="cinza">-f</span> ~/.ssh/id_ecdsa           
+                
+        <span class="cinza">-t ecdsa: especifica o tipo de chave como ECDSA.</span>
+        <span class="cinza">-b 521: define o tamanho da chave para 521 bits (o maior suportado pelo ECDSA).</span>
+        <span class="cinza">-f: define o nome do arquivo para a chave.</span>
+                    </code>
+    
+
+        <button class="copiar_bt" onclick="copiarCodigo(texto2)" type="button"></button>
+                    </pre>
+                    <br>
+                    <p>Em seguida crie a chave id_ed25519, utilizando o mesmo esquema, só que especificandos algumas partes para criar a chave corretamente</p>
+
+                    <pre>
+                        <code>
+        <span class="azul">$</span> <span class="roxo">ssh-keygen</span> <span class="cinza">-t</span> <span class="vermelho">ed25519</span> <span class="cinza">-f</span> ~/.ssh/id_ed25519
+
+        <span class="cinza">-t ed25519: especifica o tipo de chave como Ed25519.</span>
+        <span class="cinza">-f: define o nome do arquivo para a chave.</span>
+        </code>
+    
+
+        <button class="copiar_bt" onclick="copiarCodigo(texto3)" type="button"></button>
+    </pre>
+
+
+                    <br>
+
+                    <p>E por último crie a chave a chave rsa:</p>
+
+                    <pre>
+                        <code>
+        <span class="azul">$</span> <span class="roxo">ssh-keygen</span> <span class="cinza">-t</span> <span class="vermelho">rsa</span> <span class="cinza">-b</span> <span class="verde">4096</span> <span class="cinza">-f</span> ~/.ssh/id_rsa
+                            
+        <span class="cinza">-t rsa: especifica o tipo de chave como RSA.</span>
+        <span class="cinza">-b 4096: define o tamanho da chave para 4096 bits.</span>
+        <span class="cinza">-f: define o nome do arquivo para a chave.</span>
+        </code>
+        
+
+        <button class="copiar_bt" onclick="copiarCodigo(texto4)" type="button"></button>
+    </pre>
+    <br>
+
+    <p>Caso esteja em dúvida se gerou esses arquivos corretamente, você pode repetir novamente o comando de verificação:</p>
+    <pre>
+        <code>
+        <span class="azul">$</span> <span class="roxo">ls</span> <span class="cinza">-al</span> ~/.ssh
+
+        </code>
+    <button class="copiar_bt" onclick="copiarCodigo(texto5)" type="button"></button>
+    </pre>
+
+        <p>Se estiver correto, os arquivos id_rsa.pub, id_ed25519.pub e id_ecdsa.pub devem aparecer na lista de arquivos.</p>
+
+        </section>
+
+
+        <section id="gerandoChave" class="gerandoChave">
+            <h1>Gerando a Chave</h1>
+
+            <p>Com todos os preparativos prontos nossa chave SSH pode finalmente ser gerada no Git-Bash utilizando o comando:</p>
+
+            <pre>
+                <code>
+        <span class="azul">$</span> <span class="roxo">ssh-keygen</span> <span class="cinza">-t</span> <span class="laranja">ed25519</span> <span class="cinza">-C</span> <span class="azul-claro">"seu-email@exmplo.com"</span>
+                </code>
+                <button class="copiar_bt" onclick="copiarCodigo(texto6)" type="button"></button>
+            </pre>
+            <br>
+            <p>Se seu pc não suporta ed25519, use rsa</p>
+
+            <pre>
+                <code>
+        <span class="azul">$</span> <span class="roxo">ssh-keygen</span> <span class="cinza">-t</span> <span class="laranja">rsa</span> <span class="cinza">-b</span> <span class="verde">4096</span> <span class="cinza">-C</span> <span class="azul-claro">"seu-email@exemplo.com"</span>
+                </code>
+                <button class="copiar_bt" onclick="copiarCodigo(texto7)" type="button"></button>
+            </pre>
+            <br>
+
+            <p>Isso irá criar uma chave SSH usando o nome do e-mail como etiqueta</p>
+            <pre>
+                <code>
+        <span class="azul-claro">Generating public/private <span class="laranja">ed25519</span> key pair.</span>
+        <span class="cinza">Enter file in which to save the key (/c/Users/home/.ssh/id_ed25519):</span>
+                </code>
+            </pre>
+            <br>
+            <p>Agora basta pressionar a tecla enter para passar para a próxima etapa, que no caso é definir uma senha para usar a chave SSH (esse passo é opcional.)</p>
+            <pre>
+                <code>
+        <span class="cinza">Enter passphrase (empty for no passphrase): [Digete a sena, se quiser.]</span>
+        <span class="cinza">Enter same passphrase again: [Digite novamente]</span>
+                </code>
+            </pre>
+            <br>
+
+            <p>Após pressionar a tecla enter, o sistema irá criar a respectiva chave juntamente com o e-mail e uma espécie de código QR irá aparecer no terminal do Git-Bash.</p>
+            <pre>
+    
+        </section>
+
+        <section id="adicionar_chave" class="adicionar_chave">
+            <h1>Adicionando Chave SSH</h1>
+            <p>Para adicionar a chave na sua conta do GitHub você precisa copiar a chave gerada no arquivo onde foi armazenado a chave, você pode fazer isso manualmente, ou pode fazer com comando, que é o nosso caso:</p>
+
+            <pre>
+                <code>
+        <span class="azul">$</span> <span class="roxo">clip</span> <span class="azul-claro">&lt; ~/.ssh/id_ed25519.pub</span>
+    </code>
+    <button class="copiar_bt" onclick="copiarCodigo(texto8)"></button>
+            </pre>
+            <br>
+            <p>Caso você gerou a chave em rsa, poderá copiar a chave espeficando o arquivo em que foi gerado a chave, que no caso foi em um arquivo rsa.</p>
+            <pre>
+                <code>
+        <span class="azul">$</span> <span class="roxo">clip</span> <span class="azul-claro">&lt; ~/.ssh/id_rsa</span>
+                </code>
+    <button class="copiar_bt" onclick="copiarCodigo(texto8)"></button>
+            </pre>
+            <br>
+            <p>com todos os passos finalizados agora é só ir até sua conta do GitHub e adicionar a chave SSH.</p>
+        </section>
+    </main>
+</body>
+</html>

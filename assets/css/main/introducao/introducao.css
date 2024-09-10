@@ -1,0 +1,28 @@
+.github_img {
+    border: 1px solid  gray;
+    border-radius: 50%;
+    background: url("../../../img/github_11376446.png") center / cover;
+    width: 200px;
+    height: 200px;
+}
+
+.introducao {
+    display: flex;
+    justify-content: center;
+    padding-top: 250px;
+    width: 100%;
+    height: 60vh;
+    
+}
+
+.introducao_div {
+    align-items: center;
+    display: flex;
+    gap: 25px;
+    height: 205px;
+    width: 500px;
+}
+
+.paragrafo_introducao {
+    width: 270px;
+}
